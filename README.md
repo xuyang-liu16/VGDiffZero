@@ -49,7 +49,7 @@ Choices for `box_representation_method`: "crop" is using cropping only to isolat
 Choices for `box_method_aggregator`: given two sets of predicted errors, "sum" selects the proposal with the minimum total error $e_\text{total} = e_\text{mask} + e_\text{crop}$, while "max" selects the proposal with the minimum error in either set. (default: "sum")
 
 ## Acknowledgements
-Some code snippets are adapted from excellent open-source projects including [Stable-Diffusion](https://github.com/CompVis/stable-diffusion), [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier) and [ReCLIP](https://github.com/allenai/reclip).
+Our implementation of VGDiffZero is partly based on the following codebases, including [Stable-Diffusion](https://github.com/CompVis/stable-diffusion), [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier) and [ReCLIP](https://github.com/allenai/reclip). We gratefully thank the authors for their excellent works.
 
 ## Citation
 Please consider citing our paper in your publications, if our findings help your research.

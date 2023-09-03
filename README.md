@@ -49,13 +49,9 @@ Choices for `box_representation_method`: "crop" is using cropping only to isolat
 Choices for `box_method_aggregator`: given two sets of predicted errors, "sum" selects the proposal with the minimum total error $e_\text{total} = e_\text{mask} + e_\text{crop}$, while "max" selects the proposal with the minimum error in either set. (default: "sum")
 
 ## Acknowledgements
-
-- [Stable-Diffusion](https://github.com/CompVis/stable-diffusion): We use the pre-trained Stable Diffusion 2-1 checkpoint.
-- [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier): We borrowed code from Diffusion Classifier to predict noise.
-- [ReCLIP](https://github.com/allenai/reclip): Our visual grounding framework codebase is built upon ReCLIP.
+Some code snippets are adapted from excellent open-source projects including [Stable-Diffusion](https://github.com/CompVis/stable-diffusion), [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier) and [ReCLIP](https://github.com/allenai/reclip).
 
 ## Citation
-
-If you find this work useful in your research, please cite:
+Please consider citing our paper in your publications, if our findings help your research.
 
 

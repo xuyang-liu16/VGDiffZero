@@ -50,7 +50,9 @@ Choices for `box_method_aggregator`: given two sets of predicted errors, "sum" s
 
 ## Acknowledgements
 
-The code is based on [Stable-Diffusion](https://github.com/CompVis/stable-diffusion), [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier), and [ReCLIP](https://github.com/allenai/reclip).
+- [Stable-Diffusion](https://github.com/CompVis/stable-diffusion): We use the pre-trained Stable Diffusion 2-1 checkpoint.
+- [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier): We borrowed code from Diffusion Classifier to predict noise.
+- [ReCLIP](https://github.com/allenai/reclip): Our visual grounding framework codebase is built upon ReCLIP.
 
 ## Citation
 

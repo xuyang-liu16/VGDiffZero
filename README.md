@@ -20,13 +20,10 @@ conda activate VGDiffZero
 ## Dataset
 
 ### 1. Download COCO 2014 train images
-Download images in "./data/" path
-```shell
-wget http://images.cocodataset.org/zips/train2014.zip
-unzip train2014
-```
+Download images via this [link](http://images.cocodataset.org/zips/train2014.zip), and move them to `./data/`.
+
 ### 2. Download RefCOCO, RefCOCO+, and RefCOCOg annotations 
-Download annotations in "./data/" path
+Download annotations from this [google drive link](https://drive.google.com/drive/folders/1OqbQ25xQh5HXxZLvoxLprS8w7gA54GkR?usp=drive_link), and move them to `./data/`.
 
 ## Evaluation
 ```shell
@@ -54,4 +51,6 @@ Our implementation of VGDiffZero is partly based on the following codebases, inc
 ## Citation
 Please consider citing our paper in your publications, if our findings help your research.
 
+## Contact
+For any question about our paper or code, please contact [Xuyang Liu](liuxuyang@stu.scu.edu.cn).
 

@@ -1,6 +1,6 @@
 # VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders
 Official PyTorch implementation of our paper 
-* **Title**: VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders
+* **Title**: [VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders](https://arxiv.org/pdf/2309.01141.pdf)
 * **Authors**: Xuyang Liu, Siteng Huang, Yachen Kang, Honggang chen, and Donglin Wang 
 * **Institutes**: Westlake University and Sichuan University <br>
 
@@ -50,6 +50,16 @@ Our implementation of VGDiffZero is partly based on the following codebases, inc
 
 ## Citation
 Please consider citing our paper in your publications, if our findings help your research.
+```bibtex
+@misc{liu2023vgdiffzero,
+      title={VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders}, 
+      author={Xuyang Liu and Siteng Huang and Yachen Kang and Honggang Chen and Donglin Wang},
+      year={2023},
+      eprint={2309.01141},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 
 ## Contact
 For any question about our paper or code, please contact [Xuyang Liu](liuxuyang@stu.scu.edu.cn).

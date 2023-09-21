@@ -27,7 +27,7 @@ Download annotations from this [google drive link](https://drive.google.com/driv
 
 ## Evaluation
 ```shell
-python main.py --input_file INPUT_FILE --image_root IMAGE_ROOT --method {full_exp/core_exp/random} --box_representation_method {crop/mask/crop,mask} --box_method_aggregator {sum/max} {--output_file PATH_TO_OUTPUT_FILE}
+python main.py --input_file INPUT_FILE --image_root IMAGE_ROOT --diffusion_model {1-4/2-1} --method {full_exp/core_exp/random} --box_representation_method {crop/mask/crop,mask} --box_method_aggregator {sum/max} {--output_file PATH_TO_OUTPUT_FILE} {--detector_file PATH_TO_DETECTION_FILE}
 ```
 (`/` is used above to denote different options for a given argument.)
 

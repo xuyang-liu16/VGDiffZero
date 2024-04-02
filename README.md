@@ -2,7 +2,7 @@
 Official PyTorch implementation of our paper 
 * **Title**: [VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders](https://arxiv.org/pdf/2309.01141.pdf)
 * **Authors**: Xuyang Liu, Siteng Huang, Yachen Kang, Honggang chen, and Donglin Wang 
-* **Institutes**: Westlake University and Sichuan University <br>
+* **Institutes**: Sichuan University and Westlake University  <br>
 
 ## Overview
 <p align="center"> <img src="overview.png" width="1000" align="center"> </p>
@@ -51,13 +51,13 @@ Our implementation of VGDiffZero is partly based on the following codebases, inc
 ## Citation
 Please consider citing our paper in your publications, if our findings help your research.
 ```bibtex
-@misc{liu2023vgdiffzero,
-      title={VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders}, 
-      author={Xuyang Liu and Siteng Huang and Yachen Kang and Honggang Chen and Donglin Wang},
-      year={2023},
-      eprint={2309.01141},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{liu2024vgdiffzero,
+  title={VGDiffZero: Text-to-image diffusion models can be zero-shot visual grounders},
+  author={Liu, Xuyang and Huang, Siteng and Kang, Yachen and Chen, Honggang and Wang, Donglin},
+  booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={2765--2769},
+  year={2024},
+  organization={IEEE}
 }
 ```
 

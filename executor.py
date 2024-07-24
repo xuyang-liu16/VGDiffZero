@@ -1,5 +1,4 @@
 from typing import List, Dict, Union, Tuple
-
 from PIL import Image, ImageDraw, ImageFilter, ImageChops
 import spacy
 import hashlib
@@ -20,9 +19,11 @@ from interpreter import Box
 class VGDiffZeroExecutor:
     def __init__(self, version: str = '2-1', n_trials: int = 1, n_samples: List[int] = [5, 10], device: str = "cpu", box_representation_method: str = "crop", method_aggregator: str = "sum") -> None:
         IMPLEMENTED_METHODS = ["crop", "mask"]
+        # Raise an error if an unsupported box representation method is used
         if any(m not in IMPLEMENTED_METHODS for m in box_representation_method.split(",")):
             raise NotImplementedError
         IMPLEMENTED_AGGREGATORS = ["max", "sum"]
+        # Raise an error if an unsupported method aggregator is used
         if method_aggregator not in IMPLEMENTED_AGGREGATORS:
             raise NotImplementedError
         self.device = device
@@ -32,12 +33,14 @@ class VGDiffZeroExecutor:
         self.version = version
         self.n_trials = n_trials
         self.n_samples = n_samples
+        # Load the Stable Diffusion model and its components
         self.vae, self.tokenizer, self.text_encoder, self.unet, self.scheduler = get_sd_model(version)
         self.vae = self.vae.to(device)
         self.text_encoder = self.text_encoder.to(device)
         self.unet = self.unet.to(device)
         self.scheduler_config = get_scheduler_config(version)
 
+        # Define image transformation steps
         self.image_transform = transforms.Compose([
             transforms.Resize(512, interpolation=InterpolationMode.BICUBIC),
             transforms.CenterCrop(512),
@@ -48,11 +51,13 @@ class VGDiffZeroExecutor:
         self.preprocesses = [self.image_transform]
 
     def preprocess_text(self, text: str) -> torch.Tensor:
+        # Preprocess the text input for the model
         text_input = self.tokenizer(["a photo of " + text.lower()], padding="max_length",
                            max_length=self.tokenizer.model_max_length, truncation=True, return_tensors="pt")
         return text_input
     
     def preprocess_image(self, image: Image) -> List[torch.Tensor]:
+        # Preprocess the image input for the model
         return [preprocess(image) for preprocess in self.preprocesses]
     
     def tensorize_inputs(self, caption: str, image: Image, boxes: List[Box]) -> Tuple[List[torch.Tensor], torch.Tensor]:
@@ -61,6 +66,7 @@ class VGDiffZeroExecutor:
             images.append([])
        
         if "crop" in self.box_representation_method:
+            # Process each bounding box by cropping the image
             for i in range(len(boxes)):
                 image_i = image.copy()
                 box = [
@@ -74,6 +80,7 @@ class VGDiffZeroExecutor:
                 for j, img in enumerate(preprocessed_images):
                     images[j].append(img.to(self.device))
         if "mask" in self.box_representation_method:
+            # Process each bounding box by masking the image
             for i in range(len(boxes)):
                 image_i = image.copy()
                 mask = Image.new('L', image_i.size, 0)
@@ -92,11 +99,13 @@ class VGDiffZeroExecutor:
                     images[j].append(img.to(self.device))
         imgs = [torch.stack(image_list) for image_list in images]
         
+        # Preprocess the text input
         text_tensor = self.preprocess_text(caption.lower()).to(self.device)
         return imgs, text_tensor
 
     def eval_error(self, latent, all_noise, ts, noise_idxs,
                    text_embed, batch_size=32, dtype='float32', loss='l2'):
+        # Evaluate the error between the predicted noise and the actual noise
         assert len(ts) == len(noise_idxs)
         pred_errors = torch.zeros(len(ts), device='cpu')
         idx = 0
@@ -122,6 +131,7 @@ class VGDiffZeroExecutor:
         return pred_errors
 
     def eval_single_prompt(self, latent, text_embed, latent_height, latent_width, all_noise=None):
+        # Evaluate a single prompt and return the mean error
         scheduler_config = get_scheduler_config(self.version)
         T = scheduler_config['num_train_timesteps']
         max_n_samples = max(self.n_samples)
@@ -149,6 +159,7 @@ class VGDiffZeroExecutor:
         return error
 
     def __call__(self, caption: str, image: Image, boxes: List[Box]) -> torch.Tensor:
+        # Main function to execute the VGDiffZero evaluation
         images, text_tensor = self.tensorize_inputs(caption, image, boxes)
         box_representation_methods = self.box_representation_method.split(',')
         embeddings = []
@@ -167,7 +178,9 @@ class VGDiffZeroExecutor:
                 latent_height, latent_width = image.shape[2] // 8, image.shape[3] // 8
                 x0 = self.vae.encode(image).latent_dist.mean
                 x0 *= 0.18215
-                logits_per_text = self.eval_single_prompt(x0, text_embeddings, latent_height, latent_width, all_noise = None)
+               
+
+ logits_per_text = self.eval_single_prompt(x0, text_embeddings, latent_height, latent_width, all_noise = None)
                 all_logits_per_text.append(logits_per_text)
         if len(box_representation_methods) > 1:
             all_logits_per_text1 = F.softmax(torch.stack(all_logits_per_text[:len(boxes)]), dim=0)
@@ -189,4 +202,3 @@ class VGDiffZeroExecutor:
             elif self.method_aggregator == "sum":
                 all_logits_per_text = all_logits_per_text.view(-1, len(boxes)).sum(dim=0, keepdim=True)
         return all_logits_per_text.view(-1)
-    

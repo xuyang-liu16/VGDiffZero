@@ -64,5 +64,5 @@ Our implementation of VGDiffZero is partly based on the following codebases, inc
 
 
 ## :e-mail: Contact
-For any question about our paper or code, please contact [Xuyang Liu](mailto:liuxuyang@stu.scu.edu.cn).
+For any question about our paper or code, please email `liuxuyang@stu.scu.edu.cn`.
 

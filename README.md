@@ -1,22 +1,16 @@
+<div align=center>
+  
 # VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders
-Official PyTorch implementation of our paper 
-* **Title**: [VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders](https://arxiv.org/pdf/2309.01141.pdf)
-* **Authors**: [Xuyang Liu](https://xuyang-liu16.github.io/), [Siteng Huang](https://kyonhuang.top/), [Yachen Kang](https://yachenkang.github.io/), [Honggang Chen](https://sites.google.com/view/honggangchen/), [Donglin Wang](https://milab.westlake.edu.cn/)
-* **Institutes**: Sichuan University and Westlake University
-* **Conference**: 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
 
-## :pushpin: Citation
-Please consider citing our paper in your publications, if our findings help your research.
-```bibtex
-@inproceedings{liu2024vgdiffzero,
-  title={VGDiffZero: Text-to-image diffusion models can be zero-shot visual grounders},
-  author={Liu, Xuyang and Huang, Siteng and Kang, Yachen and Chen, Honggang and Wang, Donglin},
-  booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  pages={2765--2769},
-  year={2024},
-  organization={IEEE}
-}
-```
+**[Xuyang Liu](https://xuyang-liu16.github.io/), [Siteng Huang](https://kyonhuang.top/), [Yachen Kang](https://yachenkang.github.io/), [Honggang Chen](https://sites.google.com/view/honggangchen/), [Donglin Wang](https://milab.westlake.edu.cn/)**
+
+<p>
+<a href='https://arxiv.org/abs/2309.01141'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
+<a href='https://ieeexplore.ieee.org/document/10445945'><img src='https://img.shields.io/badge/Paper-ICASSP-blue'></a>
+</p>
+
+</div>
+
 
 ## :sparkles: Overview
 <p align="center"> <img src="overview.png" width="1000" align="center"> </p>
@@ -62,6 +56,18 @@ Choices for `box_method_aggregator`: given two sets of predicted errors, "sum" s
 ## :thumbsup: Acknowledgements
 Our implementation of VGDiffZero is partly based on the following codebases, including [Stable-Diffusion](https://github.com/CompVis/stable-diffusion), [Diffusion Classifier](https://github.com/diffusion-classifier/diffusion-classifier) and [ReCLIP](https://github.com/allenai/reclip). We gratefully thank the authors for their excellent works.
 
+## :pushpin: Citation
+Please consider citing our paper in your publications, if our findings help your research.
+```bibtex
+@inproceedings{liu2024vgdiffzero,
+  title={VGDiffZero: Text-to-image diffusion models can be zero-shot visual grounders},
+  author={Liu, Xuyang and Huang, Siteng and Kang, Yachen and Chen, Honggang and Wang, Donglin},
+  booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={2765--2769},
+  year={2024},
+  organization={IEEE}
+}
+```
 
 ## :e-mail: Contact
 For any question about our paper or code, please email `liuxuyang@stu.scu.edu.cn`.

@@ -14,7 +14,8 @@
 
 ## :sparkles: Overview
 <p align="center"> <img src="overview.png" width="1000" align="center"> </p>
-In this work, we explore directly applying a pre-trained generative diffusion model to the challenging discriminative task of visual grounding without any fine-tuning and additional training dataset. Specifically, we propose VGDiffZero, a simple yet effective zero-shot visual grounding framework based on text-to-image diffusion models. We also design a comprehensive region-scoring method considering both global and local contexts of each isolated proposal. Extensive experiments on RefCOCO, RefCOCO+, and RefCOCOg show that VGDiffZero achieves strong performance on zero-shot visual grounding.
+
+> **TLDR:** In this work, we explore directly applying a pre-trained generative diffusion model to the challenging discriminative task of visual grounding without any fine-tuning and additional training dataset.
 
 ## 💥 Core codes
 VGDiffZero is initailized by [.diffusion/models.py](https://github.com/xuyang-liu16/VGDiffZero/blob/main/diffusion/models.py), and implemented by a `class VGDiffZeroExecutor`, which can be found in [executor.py](https://github.com/xuyang-liu16/VGDiffZero/blob/main/executor.py).

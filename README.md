@@ -1,13 +1,16 @@
 <div align=center>
   
-# VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders
+<h1> VGDiffZero: Text-to-image Diffusion Models Can Be Zero-shot Visual Grounders </h1>
 
-**[Xuyang Liu](https://xuyang-liu16.github.io/), [Siteng Huang](https://kyonhuang.top/), [Yachen Kang](https://yachenkang.github.io/), [Honggang Chen](https://sites.google.com/view/honggangchen/), [Donglin Wang](https://milab.westlake.edu.cn/)**
+<h4 align="center"> 
+  
+[Xuyang Liu](https://xuyang-liu16.github.io/)<sup>1*</sup>, [Siteng Huang](https://kyonhuang.top/)<sup>2*</sup>, [Yachen Kang](https://yachenkang.github.io/)<sup>2</sup>, [Honggang Chen](https://sites.google.com/view/honggangchen/)<sup>1</sup>, [Donglin Wang](https://milab.westlake.edu.cn/)<sup>2✉</sup>
 
-<p>
-<a href='https://arxiv.org/abs/2309.01141'><img src='https://img.shields.io/badge/Paper-arXiv-red'></a>
-<a href='https://ieeexplore.ieee.org/document/10445945'><img src='https://img.shields.io/badge/Paper-ICASSP-blue'></a>
-</p>
+<sup>1</sup>Sichuan University, <sup>2</sup>Westlake University
+
+</h4>
+
+</div>
 
 </div>
 

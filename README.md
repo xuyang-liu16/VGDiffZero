@@ -4,7 +4,7 @@
 
 <h4 align="center"> 
   
-[Xuyang Liu](https://xuyang-liu16.github.io/)<sup>1*</sup>, [Siteng Huang](https://kyonhuang.top/)<sup>2*</sup>, [Yachen Kang](https://yachenkang.github.io/)<sup>2</sup>, [Honggang Chen](https://sites.google.com/view/honggangchen/)<sup>1</sup>, [Donglin Wang](https://milab.westlake.edu.cn/)<sup>2✉</sup>
+[Xuyang Liu](https://xuyang-liu16.github.io/)<sup>1,2*</sup>, [Siteng Huang](https://kyonhuang.top/)<sup>2*</sup>, [Yachen Kang](https://yachenkang.github.io/)<sup>2</sup>, [Honggang Chen](https://sites.google.com/view/honggangchen/)<sup>1</sup>, [Donglin Wang](https://milab.westlake.edu.cn/)<sup>2✉</sup>
 
 <sup>1</sup>Sichuan University, <sup>2</sup>Westlake University
 
